@@ -27,7 +27,7 @@ class CalculatorController extends BaseController
         $calculator = new CalculatorService();
 
         $result = collect([
-            'result' => $calculator->sum($request->operand1, $request->operand2),
+            'result' => $calculator->sum($request->operand1 ?? '', $request->operand2 ?? ''),
         ]);
 
         return $this->response($result, true);

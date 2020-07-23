@@ -12,7 +12,7 @@ namespace App\Config;
 class ValidateRulesConfig
 {
     public const SUM = [
-        'operand1' => 'digits_between:1,255',
-        'operand2' => 'digits_between:1,255',
+        'operand1' => 'custom_numeric|between:0,255',
+        'operand2' => 'custom_numeric|between:0,255',
     ];
 }

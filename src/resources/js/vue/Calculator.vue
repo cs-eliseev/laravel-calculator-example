@@ -66,7 +66,7 @@
                         if (error instanceof Object) {
                             Object.keys(error).forEach(key => {
                                 if (this.errorMessage != '') this.errorMessage += '<br />';
-                                this.errorMessage += this.fields[key] + ': ' + error[key];
+                                this.errorMessage += this.fields[key] + ': ' + error[key].join(' ');
                             });
                         } else {
                             this.errorMessage = error;
