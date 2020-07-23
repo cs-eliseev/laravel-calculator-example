@@ -26,6 +26,11 @@ Uses stack: Nginx, PHP 7.4, Redis.
 /logs
 ```
 
+### UnitTest report path
+
+```
+/src/coverage_report
+```
 
 ## Usage
 
@@ -56,13 +61,23 @@ Uses stack: Nginx, PHP 7.4, Redis.
  
 ### Use UnitTest
 
-UNIT test service `CalculatorService`
+UnitTest service `CalculatorService`
 
-1. To run the PHPUnit unit tests
+1. Run UnitTest
 
     ```shell
-    docker exec calculate-workspace ./vendor/bin/phpunit
+    docker exec calculate-workspace phpunit
     ```
+
+1. View code coverage
+
+    ```
+   /src/coverage_report/index.html
+   ```
+
+## Documentation
+
+[Project documentation](https://github.com/cs-eliseev/laravel-calculator-example/blob/master/src/README.md)
 
 ***
 

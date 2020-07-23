@@ -26,6 +26,12 @@
 /logs
 ```
 
+### Путь к отчету к UnitTest
+
+```
+/src/coverage_report
+```
+
 
 ## Использование
 
@@ -56,6 +62,24 @@
  
 ### Использование UnitTest
 
+UnitTest для сервиса `CalculatorService`
+
+1. Запуск UnitTest
+
+    ```shell
+    docker exec calculate-workspace phpunit
+    ```
+
+1. Просмотр покрытия тестоми
+
+    ```
+   /src/coverage_report/index.html
+   ```
+
+## Документация
+
+[Документация по проекту](https://github.com/cs-eliseev/laravel-calculator-example/blob/master/src/README.ru_RU.md)
+ 
 ***
 
 > Елисеев АК
