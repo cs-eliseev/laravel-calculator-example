@@ -1,0 +1,20 @@
+#app {
+    margin-top: 5rem;
+}
+
+.calculator {
+    &__result {
+        min-width: 300px;
+    }
+}
+
+.loader {
+    position: relative;
+
+    &__spin {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
