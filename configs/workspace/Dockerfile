@@ -89,6 +89,21 @@ ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 RUN ln -s $NVM_DIR/versions/node/v$NODE_VERSION/bin/node /usr/local/bin/node && \
     ln -s $NVM_DIR/versions/node/v$NODE_VERSION/bin/npm /usr/local/bin/npm
 
+###########################################################################
+# xDebug:
+###########################################################################
+
+USER root
+
+# Load the xdebug extension only with phpunit commands
+RUN apt-get install -y php${LARADOCK_PHP_VERSION}-xdebug
+
+# ADD for REMOTE debugging
+COPY ./xdebug.ini /etc/php/${LARADOCK_PHP_VERSION}/cli/conf.d/xdebug.ini
+
+RUN sed -i "s/xdebug.remote_autostart=0/xdebug.remote_autostart=1/" /etc/php/${LARADOCK_PHP_VERSION}/cli/conf.d/xdebug.ini && \
+    sed -i "s/xdebug.remote_enable=0/xdebug.remote_enable=1/" /etc/php/${LARADOCK_PHP_VERSION}/cli/conf.d/xdebug.ini && \
+    sed -i "s/xdebug.cli_color=0/xdebug.cli_color=1/" /etc/php/${LARADOCK_PHP_VERSION}/cli/conf.d/xdebug.ini
 
 #
 #--------------------------------------------------------------------------

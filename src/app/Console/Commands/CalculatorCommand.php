@@ -31,7 +31,7 @@ class CalculatorCommand extends Command
      *
      * @var string
      */
-    protected $description = 'The sum of two positive numbers';
+    protected $description = 'The sum of two positive numeric';
 
     /**
      * Create a new command instance.
