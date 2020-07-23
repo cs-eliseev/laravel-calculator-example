@@ -35,6 +35,9 @@ class Kernel extends HttpKernel
         ],
         'api' => [
         ],
+        'ajax' => [
+            \App\Http\Middleware\AjaxMiddleware::class,
+        ],
     ];
 
     /**

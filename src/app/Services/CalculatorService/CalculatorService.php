@@ -34,6 +34,6 @@ class CalculatorService
      */
     public function sum(string $a, string $b): string
     {
-        return $this->calculateSum->run($a, $b);
+        return $this->calculateSum->run($a ?: '0', $b ?: '0');
     }
 }

@@ -1,4 +1,6 @@
-Example ordering for Laravel
+English | [Русский](https://github.com/cs-eliseev/laravel-calculator-example/blob/master/README.ru_RU.md)
+
+Example calculator for Laravel
 =======
 
 ## Description
@@ -15,13 +17,13 @@ Uses stack: Nginx, PHP 7.4, Redis.
 ### Laravel project path
 
 ```
-src
+/src
 ```
 
 ### Logs path
 
 ```
-logs
+/logs
 ```
 
 
@@ -53,6 +55,14 @@ logs
     ```
  
 ### Use UnitTest
+
+UNIT test service `CalculatorService`
+
+1. To run the PHPUnit unit tests
+
+    ```shell
+    docker exec calculate-workspace ./vendor/bin/phpunit
+    ```
 
 ***
 
