@@ -10,26 +10,42 @@ Uses stack: Nginx, PHP 7.4, Redis.
 
 ## Info
 
-### Project link
+### Ports
 
-* Laravel application HTTP: http://localhost:6002
+* Laravel application: http://localhost:6002
+
+|Service|Port|
+|:---|:---:|
+|http|6002|
+|https|6003|
+|redis|6007|
+|xdebug|9000|
+
+### Docker containers
+
+|Service|Container name|
+|:---|:---:|
+|nginx|calculate-nginx|
+|php-fpm|calculate-php-fpm|
+|redis|calculate-redis|
+|aplication|calculate-workspace|
 
 ### Laravel project path
 
 ```
-/src
+./src
 ```
 
 ### Logs path
 
 ```
-/logs
+./logs
 ```
 
 ### UnitTest report path
 
 ```
-/src/coverage_report
+./src/coverage_report
 ```
 
 ## Usage
@@ -56,28 +72,43 @@ Uses stack: Nginx, PHP 7.4, Redis.
 1. Build dependency
 
     ```shell
-    docker exec -it calculate-workspace npm i --no-bin-links && npm run dev && composer update
+    docker exec calculate-workspace bash -c 'npm i --no-bin-links && npm run dev && composer update'
     ```
  
 ### Use UnitTest
 
 UnitTest service `CalculatorService`
 
+1. Go to container
+
+    ```shell
+    docker exec -it calculate-workspace bash
+    ```
+
 1. Run UnitTest
 
     ```shell
-    docker exec calculate-workspace phpunit
+    phpunit
     ```
 
 1. View code coverage
 
     ```
-   /src/coverage_report/index.html
+   ./src/coverage_report/index.html
    ```
+
+### Use console calculator
+
+1. Run script
+
+    ```shell
+    docker exec calculate-workspace php artisan calculator:sum [<operand1> [<operand2>]]
+    ```
+
 
 ## Documentation
 
-[Project documentation](https://github.com/cs-eliseev/laravel-calculator-example/blob/master/src/README.md)
+[User documentation](https://github.com/cs-eliseev/laravel-calculator-example/blob/master/src/README.md)
 
 ***
 

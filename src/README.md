@@ -12,7 +12,7 @@ Documentation
 1. Run script
 
     ```shell
-    docker exec calculate-workspace php artisan calculator:sum [<operand1> [<operand2>]]
+    php artisan calculator:sum [<operand1> [<operand2>]]
     ```
 
     Arguments:
@@ -22,7 +22,7 @@ Documentation
 
     Example error:
 
-    |operand value|error|
+    |Operand value|Error|
     |:---:|:---|
     |text|The :operand must be a positive number.|
     |123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 1234|The :operand must be between 0 and 255 characters.|
@@ -33,19 +33,19 @@ Documentation
 1. Run UnitTest
 
     ```shell
-    docker exec calculate-workspace phpunit
+    phpunit
     ```
 
 1. View code coverage
 
     ```
-   /src/coverage_report/index.html
+   ./coverage_report/index.html
    ```
 
 
 ## Interface error
 
-|operand value|error|translate|
+|Operand value|Error|Translate|
 |:---:|:---|:---|
 |text|Поле должно содержать положительное число.|The must be a positive number.|
 |123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 1234|Поле должно быть длинной от 0 до 255 символов.|The must be between 0 and 255 characters.|
