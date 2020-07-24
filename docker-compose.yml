@@ -150,7 +150,7 @@ services:
         context: ${PATH_DOCKER}/redis
         dockerfile: Dockerfile
       volumes:
-        - ~/.{APP_NAME}/redis:/data
+        - ~/.docker_${APP_NAME}/redis:/data
         - ${PATH_LOGS}/redis:/var/log/redis
       ports:
         - "${REDIS_PORT}:6379"
