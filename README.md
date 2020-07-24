@@ -17,7 +17,6 @@ Uses stack: Nginx, PHP 7.4, Redis.
 |Service|Port|
 |:---|:---:|
 |http|6002|
-|https|6003|
 |redis|6007|
 |xdebug|9000|
 
