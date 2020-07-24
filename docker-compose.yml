@@ -28,7 +28,6 @@ services:
           - APP_CODE_PATH_CONTAINER=${APP_CODE_PATH_CONTAINER}
       volumes:
         - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
-#      command: bash -c "npm i --no-bin-links && npm run dev && composer update"
       networks:
         - frontend
         - backend
@@ -144,7 +143,7 @@ services:
         - frontend
         - backend
 
-  ### Redis ################################################
+### Redis ################################################
     redis:
       container_name: ${APP_NAME}-redis
       build:
